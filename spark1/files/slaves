@@ -1,0 +1,6 @@
+# A Spark Worker will be started on each of the machines listed below.
+{%- from 'spark1/settings.sls' import spark_slaves with context %}
+
+{% for slave in spark_slaves -%}
+{{ slave }}
+{% endfor %}

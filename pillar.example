@@ -1,0 +1,14 @@
+spark_env:
+  java_home: /opt/java/default
+  spark_home: /opt/spark
+  spark_master_ip: 127.0.0.1
+  spark_master_port: 7070
+  spark_worker_cores: 2
+  spark_worker_memory: 512m
+  spark_worker_port: 9090
+  spark_worker_instance: 1
+
+spark:
+  version: spark-1.0.2
+  hadoop_version: 2 
+  source_prefix: "https://s3.amazonaws.com/bigdata-thirdparty/spark"
