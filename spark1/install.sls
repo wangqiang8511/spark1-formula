@@ -26,6 +26,7 @@ install_spark:
     - source_hash: {{ spark.source_prefix }}/{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}.tgz.md5
     - if_missing: /tmp/spark/{{ spark.version }}-bin-hadoop{{ spark.hadoop_version }}
     - archive_format: tar
+    - tar_options: z
     - require:
       - user: spark_user
   cmd.wait:
