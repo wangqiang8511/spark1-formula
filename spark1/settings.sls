@@ -15,6 +15,7 @@
 {%- set default_spark_worker_memory = '500m' %}
 {%- set default_spark_worker_port = '9090' %}
 {%- set default_spark_worker_instances = '1' %}
+{%- set default_spark_local_dir = '/tmp/spark/' %}
 
 {%- set java_home   = gsparkenv.get('java_home', psparkenv.get('java_home', default_java_home)) %}
 {%- set spark_home   = gsparkenv.get('spark_home', psparkenv.get('spark_home', default_spark_home)) %}
@@ -24,6 +25,7 @@
 {%- set spark_worker_memory = gsparkenv.get('spark_worker_memory', psparkenv.get('spark_worker_memory', default_spark_worker_memory)) %}
 {%- set spark_worker_port = gsparkenv.get('spark_worker_port', psparkenv.get('spark_worker_port', default_spark_worker_port)) %}
 {%- set spark_worker_instances = gsparkenv.get('spark_worker_instances', psparkenv.get('spark_worker_instances', default_spark_worker_instances)) %}
+{%- set spark_local_dir = gsparkenv.get('spark_local_dir', psparkenv.get('spark_local_dir', default_spark_local_dir)) %}
 
 {%- set spark_env= {} %}
 {%- do spark_env.update({ 
@@ -34,7 +36,8 @@
     'spark_worker_cores' : spark_worker_cores,
     'spark_worker_memory' : spark_worker_memory,
     'spark_worker_port' : spark_worker_port,
-    'spark_worker_instances' : spark_worker_instances
+    'spark_worker_instances' : spark_worker_instances,
+    'spark_local_dir' : spark_local_dir
 }) %}
 
 {%- set default_spark_version = 'spark-1.0.2' %}

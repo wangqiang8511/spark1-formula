@@ -21,3 +21,10 @@ config_hive:
     - source: salt://spark1/files/hive-site.xml
     - mode: 644
 
+config_spark_tmp_folder:
+  file.directory:
+    - name: {{ spark_env.spark_local_dir }}/tmp
+    - user: spark
+    - group: spark
+    - mode: 777
+    - makedirs: True
